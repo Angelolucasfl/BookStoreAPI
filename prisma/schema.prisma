@@ -1,0 +1,31 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Genre {
+  FANTASY
+  ROMANCE
+  HORROR
+  POETRY
+  ADVENTURE
+}
+
+model Book {
+  id                  String   @id @default(uuid())
+  name                String   @unique
+  author              String
+  year_of_publication DateTime
+  genre               Genre
+  isAvailable         Boolean
+  price               Decimal
+
+  @@map("books")
+}
