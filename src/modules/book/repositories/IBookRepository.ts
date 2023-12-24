@@ -1,13 +1,12 @@
 import { Genre } from "@prisma/client";
-import { Decimal } from "@prisma/client/runtime/library";
 
 export type CreateBookProps = {
   name: string;
   author: string;
-  year_of_publication: Date;
+  year_of_publication: number;
   genre: Genre;
   isAvailable: boolean;
-  price: Decimal;
+  price: number;
 };
 
 export type BookSave = CreateBookProps & {

@@ -1,6 +1,7 @@
 import { CreateBookProps } from "./repositories/IBookRepository";
 import { IBookRepository } from "./repositories/IBookRepository";
 
+
 export class BookCreateService {
   constructor(private bookRepository: IBookRepository) {}
 

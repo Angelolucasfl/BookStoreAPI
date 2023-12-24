@@ -19,13 +19,13 @@ enum Genre {
 }
 
 model Book {
-  id                  String   @id @default(uuid())
-  name                String   @unique
+  id                  String    @id @default(uuid())
+  name                String    @unique
   author              String
-  year_of_publication DateTime
+  year_of_publication Int       
   genre               Genre
   isAvailable         Boolean
-  price               Decimal
+    price               Decimal   @db.Decimal(10, 2)
 
   @@map("books")
 }
