@@ -1,88 +1,78 @@
 
-# Nome do Projeto
-
-Uma breve descrição do projeto aqui.
+# BookStore-API
 
 ## 🔥 Introdução
 
-Coloque aqui as instruções e quais são os objetivos desse projeto, funcionalidades.
+Esse projeto se trata de uma API escrita em typescript, que tem como objetivo gerenciar uma loja de livros.
 
 ### ⚙️ Pré-requisitos
 
-Coloque aqui passo a passo que precisa para instalar o projeto e como instalá-lo.
+Para testar a aplicação localmente você precisa ter o node/npm e o git instalados. Alternativamente, você tambem pode fazer as requisições para: https://book-store-api-rho.vercel.app/
 
-```
-Pode inserir exemplos.
-```
 
 ### 🔨 Guia de instalação
 
-Explique aqui um passo a passo mostrando como deve executar para ter um ambiente de desenvolvimento em execução, desde instalar e rodar o projeto.
-
-Etapas para instalar:
+Começe clonando o repositório.
 
 ```
-Codigo, exemplos
-```
-Passo 2:
-```
-Codigo, exemplos
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
 ```
 
 
-## 🛠️ Executando os testes (caso tenha testes)
-
-Explique como executar os testes automatizados para este sistema.
+Navegue até o diretório do projeto:
 
 ```
-Coloque exemplos
+cd nome-do-repositorio
+```
+
+
+Instale as dependências:
+
+```
+npm install
+```
+
+
+Inicie o servidor de desenvolvimento:
+
+```
+npm run dev
+```
+
+
+Acesse o projeto em seu navegador:
+
+```
+http://127.0.0.1:3000
+```
+
+## 🛠️ Executando os testes
+
+
+```
+npm run test
 ```
 
 ## 📦 Tecnologias usadas:
 
-Coloque aqui as ferramentas que você usou para criar seu projeto, exemplo:
+Essas foram as libs e linguagem usadas na criação dessa API
 
 * ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
-* ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
-* ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 
-- Link para pegar as badges: https://github.com/Ileriayo/markdown-badges
+* ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
-Ou pode separar por stacks:
+* ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 
-**Front-end:**
-* [React JS](https://react.dev/)
-* [TailwindCSS](https://tailwindcss.com/)
 
-**Back-end:**
-* [NodeJS](https://nodejs.org/).
-* [TypeScript](https://www.typescriptlang.org/) 
-* [Mongo DB](https://mongodb.com/)
+* ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
+* ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 
 ## 👷 Autores
 
-Mencione todos aqueles que ajudaram a levantar o projeto desde o seu início, colaboradores.
-
-* **Nome do dev** - *Função realizada* - [nome_do_dev](https://github.com/link_do_Perfil)
-* **Sujeito Programador** - *Frontend do projeto* - [@sujeitoprogramador](https://github.com/devfraga)
-
-## 📄 Licença
-
-Esse projeto está sob a licença (nome da licença) - acesse os detalhes [LICENSE.md](https://github.com/link_da_licenca).
-
-## 💭 FAQ - Perguntas frequentes
-
-#### Questão 1
-
-Resposta 1
-
-#### Questão 2
-
-Resposta 2
+* **Angelo Lucas** - *Dev BackEnd* - [@Angelolucasfl](https://github.com/Angelolucasfl)
 
 
-## 💡 Expressões de gratidão
+## 📞  Contato
 
-* Um agradecimento publicamente.
-* Para suporte, mande um email para nome@teste.com.
-* Link para o seu linkedin [Meu linkedin](https://url_do_link)
+[@Linkedin](https://www.linkedin.com/in/angelo-lucas-7129b7268/)
