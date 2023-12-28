@@ -1,6 +1,7 @@
 import { Genre } from "@prisma/client";
 import { BookCreateService } from "../book.create.service";
 import { BookInMemoryRepository } from "../repositories/BookInMemoryRepository";
+import { Decimal } from "@prisma/client/runtime/library";
 
 let createBookService: BookCreateService;
 let bookInMemoryRepository: BookInMemoryRepository;
@@ -18,7 +19,7 @@ describe("Create Book", () => {
       year_of_publication: 1000,
       genre: Genre.FANTASY,
       isAvailable: true,
-      price: 10.0,
+      price: new Decimal(10.0),
     };
     const result = await createBookService.execute(newBook);
 
@@ -32,7 +33,7 @@ describe("Create Book", () => {
       year_of_publication: 1000,
       genre: Genre.FANTASY,
       isAvailable: true,
-      price: 10.0,
+      price: new Decimal(10.0),
     };
 
     const fResult = await createBookService.execute(newBook);

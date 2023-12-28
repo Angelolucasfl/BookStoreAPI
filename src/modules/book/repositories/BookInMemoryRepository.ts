@@ -22,4 +22,14 @@ export class BookInMemoryRepository implements IBookRepository {
   async findByName(name: string): Promise<BookSave | null> {
     return this.books.find((book) => book.name === name);
   }
+
+  async getAllBooks(): Promise<string[]> {
+    const names = this.books.map((book) => book.name);
+    return names;
+  }
+
+  async getAllAvailableBooks(): Promise<BookSave[]> {
+    const books = this.books.filter((book) => book.isAvailable === true);
+    return books;
+  }
 }
