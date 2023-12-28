@@ -5,5 +5,7 @@ const bookRouter = Router();
 const bookController = new BookController();
 
 bookRouter.post("/", bookController.create);
+bookRouter.get("/", bookController.getAllBooks);
+bookRouter.get("/available-books", bookController.getAvailableBooks);
 
 export { bookRouter };
