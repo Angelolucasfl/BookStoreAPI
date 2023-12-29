@@ -46,4 +46,19 @@ export class BookController {
       });
     }
   }
+
+  async getBookByName(request: Request, response: Response) {
+    try {
+      const { body } = request;
+      const prismaRepository = new BookPrismaRepository();
+      const querieBookService = new BookQuerieService(prismaRepository);
+      const result = await querieBookService.findByName(body.name);
+
+      return response.status(200).json(result);
+    } catch (err: any) {
+      return response.status(400).json({
+        error: err.message,
+      });
+    }
+  }
 }

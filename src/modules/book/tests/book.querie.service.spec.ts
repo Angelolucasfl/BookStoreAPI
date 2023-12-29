@@ -25,4 +25,11 @@ describe("querie books", () => {
       expect(item).toHaveProperty("isAvailable", true);
     });
   });
+
+  it("should fetch a book by name", async () => {
+    const bookName = "invalid";
+    const result = await querieBookService.findByName(bookName);
+
+    expect(result).toBeNull;
+  });
 });

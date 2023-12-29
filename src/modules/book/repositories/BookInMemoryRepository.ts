@@ -16,7 +16,12 @@ export class BookInMemoryRepository implements IBookRepository {
   }
 
   async checkAvailability(name: string): Promise<false | BookSave> {
-    throw new Error("Method not implemented.");
+    const book = this.books.find((book) => book.name === name);
+    if (book.isAvailable) {
+      return book;
+    } else {
+      return false;
+    }
   }
 
   async findByName(name: string): Promise<BookSave | null> {

@@ -1,4 +1,4 @@
-import { IBookRepository } from "./repositories/IBookRepository";
+import { BookSave, IBookRepository } from "./repositories/IBookRepository";
 
 export class BookQuerieService {
   constructor(private bookRepository: IBookRepository) {}
@@ -13,5 +13,11 @@ export class BookQuerieService {
     const books = await this.bookRepository.getAllAvailableBooks();
 
     return books;
+  }
+
+  async findByName(name: string): Promise<BookSave | null> {
+    const book = await this.bookRepository.findByName(name);
+
+    return book;
   }
 }
