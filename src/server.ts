@@ -7,7 +7,6 @@ const port = process.env.PORT;
 app.use(express.json());
 
 app.use("/", bookRouter);
-app.use("/: name", bookRouter);
 app.use("/available-books", bookRouter);
 
 app.listen(port, () => {
