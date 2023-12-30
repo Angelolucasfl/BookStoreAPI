@@ -4,6 +4,10 @@ import { randomUUID } from "crypto";
 export class BookInMemoryRepository implements IBookRepository {
   books: any[] = [];
 
+  updateBook(id: string, data: CreateBookProps): Promise<BookSave> {
+    throw new Error("Method not implemented.");
+  }
+
   async save(data: CreateBookProps): Promise<BookSave> {
     const id = randomUUID();
     const book: BookSave = {

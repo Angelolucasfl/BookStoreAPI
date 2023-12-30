@@ -16,9 +16,11 @@ export type BookSave = CreateBookProps & {
 
 export interface IBookRepository {
   save(data: CreateBookProps): Promise<BookSave>;
+
   checkAvailability(name: string): Promise<BookSave | false>;
   findByName(name: string): Promise<BookSave | null>;
-
   getAllBooks(): Promise<string[]>;
   getAllAvailableBooks(): Promise<BookSave[]>;
+
+  updateBook(id: string, data: CreateBookProps): Promise<BookSave>
 }

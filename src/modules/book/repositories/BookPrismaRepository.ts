@@ -2,6 +2,14 @@ import { BookSave, CreateBookProps, IBookRepository } from "./IBookRepository";
 import { prismaClient } from "../../../database/client";
 
 export class BookPrismaRepository implements IBookRepository {
+  async updateBook(id: string, data: CreateBookProps): Promise<BookSave> {
+    const updatedBook = await prismaClient.book.update({
+      where: { id: id },
+      data, 
+    });
+    return updatedBook;
+  }
+
   async getAllAvailableBooks(): Promise<BookSave[]> {
     const books = await prismaClient.book.findMany({
       where: {
