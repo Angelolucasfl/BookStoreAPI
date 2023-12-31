@@ -22,5 +22,5 @@ export interface IBookRepository {
   getAllBooks(): Promise<string[]>;
   getAllAvailableBooks(): Promise<BookSave[]>;
 
-  updateBook(id: string, data: CreateBookProps): Promise<BookSave>
+  updateBook(id: string, data: CreateBookProps): Promise<BookSave | null>
 }

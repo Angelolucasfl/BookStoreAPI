@@ -1,11 +1,26 @@
+import { Decimal } from "@prisma/client/runtime/library";
+import { Genre } from "@prisma/client";
 import { BookSave, CreateBookProps, IBookRepository } from "./IBookRepository";
 import { randomUUID } from "crypto";
 
 export class BookInMemoryRepository implements IBookRepository {
   books: any[] = [];
 
-  updateBook(id: string, data: CreateBookProps): Promise<BookSave> {
-    throw new Error("Method not implemented.");
+  async updateBook(
+    id: string,
+    data: CreateBookProps
+  ): Promise<BookSave | null> {
+    const updatedBookIndex = this.books.findIndex((book) => book.id === id);
+
+    if (updatedBookIndex !== -1) {
+      this.books[updatedBookIndex] = {
+        ...this.books[updatedBookIndex],
+        ...data,
+      };
+      return Promise.resolve(this.books[updatedBookIndex]);
+    }
+
+    return Promise.resolve(null);
   }
 
   async save(data: CreateBookProps): Promise<BookSave> {

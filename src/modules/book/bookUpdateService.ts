@@ -15,8 +15,8 @@ export class BookUpdateService {
 
     const updatedBook = await this.bookRepository.updateBook(id, data);
     return {
-        message: "Livro atualizado com sucesso!",
-        updatedBook
-      };
+      message: "Livro atualizado com sucesso!",
+      updatedBook,
+    };
   }
 }
