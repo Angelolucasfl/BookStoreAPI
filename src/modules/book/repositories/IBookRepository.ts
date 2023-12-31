@@ -24,4 +24,5 @@ export interface IBookRepository {
   findById(id: string): Promise<BookSave | null>;
 
   updateBook(id: string, data: CreateBookProps): Promise<BookSave | null>;
+  deleteBook(id: string): Promise<BookSave | null>;
 }

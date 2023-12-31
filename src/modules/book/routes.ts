@@ -8,5 +8,6 @@ bookRouter.post("/", bookController.create);
 bookRouter.get("/", bookController.getAllBooks);
 bookRouter.get("/available-books", bookController.getAvailableBooks);
 bookRouter.get("/book", bookController.getBookByName);
+bookRouter.put("/:id", bookController.update);
 
 export { bookRouter };

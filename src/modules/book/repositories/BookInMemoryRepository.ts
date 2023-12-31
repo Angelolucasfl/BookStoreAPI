@@ -4,15 +4,24 @@ import { BookSave, CreateBookProps, IBookRepository } from "./IBookRepository";
 import { randomUUID } from "crypto";
 
 export class BookInMemoryRepository implements IBookRepository {
-  books: any[] = [{
-    id: "idTest",
-    name: "book",
-    author: "author",
-    year_of_publication: 1000,
-    genre: Genre.FANTASY,
-    isAvailable: true,
-    price: new Decimal(12.0),
-  }];
+  books: any[] = [
+    {
+      id: "idTest",
+      name: "book",
+      author: "author",
+      year_of_publication: 1000,
+      genre: Genre.FANTASY,
+      isAvailable: true,
+      price: new Decimal(12.0),
+    },
+  ];
+
+  async deleteBook(id: string): Promise<BookSave | null> {
+    const deletedBookIndex = this.books.findIndex((book) => book.id === id);
+    const deletedBook = this.books.splice(deletedBookIndex, 1)[0];
+    
+    return deletedBook;
+  }
 
   async findById(id: string): Promise<BookSave | null> {
     const book = this.books.find((book) => book.id === id);
@@ -25,15 +34,12 @@ export class BookInMemoryRepository implements IBookRepository {
   ): Promise<BookSave | null> {
     const updatedBookIndex = this.books.findIndex((book) => book.id === id);
 
-    if (updatedBookIndex !== -1) {
-      this.books[updatedBookIndex] = {
-        ...this.books[updatedBookIndex],
-        ...data,
-      };
-      return Promise.resolve(this.books[updatedBookIndex]);
-    }
+    const updatedBook = (this.books[updatedBookIndex] = {
+      ...this.books[updatedBookIndex],
+      ...data,
+    });
 
-    return Promise.resolve(null);
+    return updatedBook;
   }
 
   async save(data: CreateBookProps): Promise<BookSave> {
@@ -59,7 +65,6 @@ export class BookInMemoryRepository implements IBookRepository {
   async findByName(name: string): Promise<BookSave | null> {
     console.log(this.books.find((book) => book.name));
     return this.books.find((book) => book.name === name);
-    
   }
 
   async getAllBooks(): Promise<string[]> {

@@ -2,6 +2,15 @@ import { BookSave, CreateBookProps, IBookRepository } from "./IBookRepository";
 import { prismaClient } from "../../../database/client";
 
 export class BookPrismaRepository implements IBookRepository {
+  async deleteBook(id: string): Promise<BookSave> {
+    const deletedBook = await prismaClient.book.delete({
+      where: {
+        id,
+      },
+    });
+    return deletedBook;
+  }
+
   async findById(id: string): Promise<BookSave | null> {
     const book = await prismaClient.book.findUnique({
       where: {
