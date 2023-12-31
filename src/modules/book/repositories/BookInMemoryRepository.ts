@@ -4,7 +4,20 @@ import { BookSave, CreateBookProps, IBookRepository } from "./IBookRepository";
 import { randomUUID } from "crypto";
 
 export class BookInMemoryRepository implements IBookRepository {
-  books: any[] = [];
+  books: any[] = [{
+    id: "idTest",
+    name: "book",
+    author: "author",
+    year_of_publication: 1000,
+    genre: Genre.FANTASY,
+    isAvailable: true,
+    price: new Decimal(12.0),
+  }];
+
+  async findById(id: string): Promise<BookSave | null> {
+    const book = this.books.find((book) => book.id === id);
+    return Promise.resolve(book || null);
+  }
 
   async updateBook(
     id: string,
@@ -44,7 +57,9 @@ export class BookInMemoryRepository implements IBookRepository {
   }
 
   async findByName(name: string): Promise<BookSave | null> {
+    console.log(this.books.find((book) => book.name));
     return this.books.find((book) => book.name === name);
+    
   }
 
   async getAllBooks(): Promise<string[]> {

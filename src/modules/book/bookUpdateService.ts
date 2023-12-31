@@ -7,7 +7,7 @@ export class BookUpdateService {
   constructor(private bookRepository: IBookRepository) {}
 
   async execute(id: string, data: CreateBookProps) {
-    const bookExists = await this.bookRepository.findByName(data.name);
+    const bookExists = await this.bookRepository.findById(id);
 
     if (!bookExists) {
       throw new Error("Esse livro não foi encontrado");
