@@ -3,6 +3,7 @@ import { BookCreateService } from "./book.create.service";
 import { BookQuerieService } from "./book.querie.service";
 import { BookPrismaRepository } from "./repositories/BookPrismaRepository";
 import { BookUpdateService } from "./bookUpdateService";
+import { BookDeleteService } from "./book.delete.service";
 
 export class BookController {
   async create(request: Request, response: Response) {
@@ -72,6 +73,21 @@ export class BookController {
       const result = await updateBookService.execute(id, body);
 
       return response.status(200).json(result);
+    } catch (err: any) {
+      return response.status(400).json({
+        error: err.message,
+      });
+    }
+  }
+
+  async delete(request: Request, response: Response) {
+    try {
+      const { id } = request.params;
+      const prismaRepository = new BookPrismaRepository();
+      const deleteBookService = new BookDeleteService(prismaRepository);
+      const result = await deleteBookService.execute(id);
+
+      return response.status(200).json("livro deletado com sucesso");
     } catch (err: any) {
       return response.status(400).json({
         error: err.message,

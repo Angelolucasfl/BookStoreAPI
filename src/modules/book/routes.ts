@@ -4,10 +4,11 @@ import { BookController } from "./book.controller";
 const bookRouter = Router();
 const bookController = new BookController();
 
-bookRouter.post("/", bookController.create);
+bookRouter.post("/book", bookController.create);
 bookRouter.get("/", bookController.getAllBooks);
 bookRouter.get("/available-books", bookController.getAvailableBooks);
 bookRouter.get("/book", bookController.getBookByName);
-bookRouter.put("/:id", bookController.update);
+bookRouter.put("/book/:id", bookController.update);
+bookRouter.delete("/book/:id", bookController.delete);
 
 export { bookRouter };
