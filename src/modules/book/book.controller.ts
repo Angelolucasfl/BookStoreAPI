@@ -51,12 +51,16 @@ export class BookController {
 
   async getBookByName(request: Request, response: Response) {
     try {
-      const { body } = request;
+      const { name } = request.query;
       const prismaRepository = new BookPrismaRepository();
       const querieBookService = new BookQuerieService(prismaRepository);
-      const result = await querieBookService.findByName(body.name);
 
-      return response.status(200).json(result);
+      if (typeof name === "string") {
+        const result = await querieBookService.findByName(name);
+        return response.status(200).json(result);
+      } else {
+        throw new Error('Parâmetro "name" inválido');
+      }
     } catch (err: any) {
       return response.status(400).json({
         error: err.message,
@@ -87,7 +91,9 @@ export class BookController {
       const deleteBookService = new BookDeleteService(prismaRepository);
       const result = await deleteBookService.execute(id);
 
-      return response.status(200).json("livro deletado com sucesso");
+      return response
+        .status(200)
+        .json({ message: "livro deletado com sucesso" });
     } catch (err: any) {
       return response.status(400).json({
         error: err.message,
