@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "https://book-store-pwx54u8wf-angelolucasfl.vercel.app/",
+      "url": "https://book-store-84u1jhgf0-angelolucasfl.vercel.app/",
       "description": "Production deployment"
     },
     {
