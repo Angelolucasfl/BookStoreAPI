@@ -22,7 +22,7 @@
   "paths": {
     "/book": {
       "post": {
-        "summary": "Cadastro de um novo livro",
+        "summary": "Cadastrar um novo livro",
         "description": "Rota responsável por cadastrar um novo livro no banco de dados",
         "tags": ["Books"],
         "requestBody": {
@@ -64,7 +64,7 @@
       },
 
       "get": {
-        "summary": "Busca de um livro pelo nome",
+        "summary": "Buscar um livro pelo nome",
         "description": "Rota responsável por buscar um livro pelo seu nome no banco de dados",
         "tags": ["Books"],
         "parameters": [
@@ -160,13 +160,53 @@
           }
         ],
         "responses": {
-            "400": {
-              "description": "Esse livro não foi encontrado"
-            },
-            "200": {
-              "description": "Livro deletado com sucesso!"
+          "400": {
+            "description": "Esse livro não foi encontrado"
+          },
+          "200": {
+            "description": "Livro deletado com sucesso!"
+          }
+        }
+      }
+    },
+
+    "/": {
+      "get": {
+        "summary": "Buscar todos os livros",
+        "description": "Rota responsável por buscar todos os livros no banco de dados",
+        "tags": ["Books"],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
             }
           }
+        }
+      }
+    },
+
+    "/available-books": {
+      "get": {
+        "summary": "Buscar todos os livros disponíveis",
+        "description": "Rota responsável por buscar todos os livros disponíveis no banco de dados",
+        "tags": ["Books"],
+        "responses": {
+          "200": {
+            "description": "Ok",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Book"
+                }
+              }
+            }
+          }
+        }
       }
     }
   },
