@@ -7,7 +7,15 @@ Esse projeto se trata de uma API escrita em typescript, que tem como objetivo ge
 
 ### ⚙️ Pré-requisitos
 
-Para testar a aplicação localmente você precisa ter o node/npm e o git instalados. Alternativamente, você tambem pode fazer as requisições para: https://book-store-api-rho.vercel.app/
+Para testar a aplicação localmente você precisa ter o node/npm e o git instalados. Siga os passos abaixo para ter acesso a API localmente ou acesse o link para uma demonstração em video das funcionalidades: https://drive.google.com/file/d/1AIXPerJ3ifzES97sp4UwiyHAJ2wDxy1S/view?usp=drive_link
+
+A api esta totalmente documentada com o swagger Ui, então será bastante intuitivo testar as rotas com as funcionalidades da aplicação como:
+*   Cadastrar um livro no banco de dados
+*   Atualizar as informações de um livro
+*   Deletar um livro do banco de dados
+*   Fazer pesquisas de um livro pelo seu nome,
+*   Buscar todos os livros disponiveis (com o atributo isAvailable = true)
+*   E Buscar o nome de todos os livros registrados
 
 
 ### 🔨 Guia de instalação
@@ -32,6 +40,8 @@ Instale as dependências:
 npm install
 ```
 
+> **Importante:** Antes de executar o projeto, certifique-se de criar um arquivo `.env` na raiz do projeto. Este arquivo deve conter as variáveis de ambiente, incluindo a URL do banco de dados PostgreSQL e a porta em que o servidor será executado. Isso é crucial para o funcionamento correto do aplicativo.
+
 
 Inicie o servidor de desenvolvimento:
 
@@ -43,7 +53,7 @@ npm run dev
 Acesse o projeto em seu navegador:
 
 ```
-http://127.0.0.1:3000
+http://127.0.0.1:3000/api-docs
 ```
 
 ## 🛠️ Executando os testes
@@ -67,6 +77,8 @@ Essas foram as libs e linguagem usadas na criação dessa API
 * ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 * ![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+
+* ![Swagger](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 
 ## 👷 Autores
 

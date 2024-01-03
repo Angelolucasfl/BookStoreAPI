@@ -11,10 +11,6 @@
   },
   "servers": [
     {
-      "url": "https://book-store-84u1jhgf0-angelolucasfl.vercel.app/",
-      "description": "Production deployment"
-    },
-    {
       "url": "http://127.0.0.1:3000/api/v1/",
       "description": "Testing locally"
     }
