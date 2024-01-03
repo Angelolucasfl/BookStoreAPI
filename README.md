@@ -7,7 +7,12 @@ Esse projeto se trata de uma API escrita em typescript, que tem como objetivo ge
 
 ### ⚙️ Pré-requisitos
 
-Para testar a aplicação localmente você precisa ter o node/npm e o git instalados. Siga os passos abaixo para ter acesso a API localmente ou acesse o link para uma demonstração em video das funcionalidades: https://drive.google.com/file/d/1AIXPerJ3ifzES97sp4UwiyHAJ2wDxy1S/view?usp=drive_link
+Para testar a aplicação localmente você precisa ter o node/npm e o git instalados. Siga os passos abaixo para ter acesso a API localmente ou acesse este link: [(https://drive.google.com/file/d/1AIXPerJ3ifzES97sp4UwiyHAJ2wDxy1S/view?usp=drive_link)] para uma demonstração em video das funcionalidades da API.
+
+
+
+
+
 
 A api esta totalmente documentada com o swagger Ui, então será bastante intuitivo testar as rotas com as funcionalidades da aplicação como:
 *   Cadastrar um livro no banco de dados
