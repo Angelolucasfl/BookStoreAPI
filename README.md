@@ -1,3 +1,4 @@
+![Logo do projeto](https://i.imgur.com/srtzWER.png)
 
 # BookStore-API
 
