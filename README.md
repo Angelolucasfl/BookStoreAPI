@@ -29,14 +29,14 @@ A api esta totalmente documentada com o swagger Ui, então será bastante intuit
 Começe clonando o repositório.
 
 ```
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/Angelolucasfl/BookStoreAPI.git
 ```
 
 
 Navegue até o diretório do projeto:
 
 ```
-cd nome-do-repositorio
+cd BookStoreAPI
 ```
 
 
